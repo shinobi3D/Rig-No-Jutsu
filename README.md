@@ -2,7 +2,7 @@
 A collection of rigging scripts I've created over the years. More to come soon.
 
 ### More Info
-anthonylynch.xyz/rig-no-jutsu
+[anthonylynch.xyz/rig-no-jutsu](anthonylynch.xyz/rig-no-jutsu)
 
 ### Install
 Clone 'jutsu' repo to 'maya/scripts' 
