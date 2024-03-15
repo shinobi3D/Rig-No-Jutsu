@@ -16,6 +16,6 @@ ColorChangerUI.PaletteUI().run()
 Copy Vert Weight
 ```python
 from jutsu.ui import CopyWeightToVertUI
-CopyWeightToVertUI.PaletteUI().run();
+CopyWeightToVertUI.show_gui()
 ```
 
