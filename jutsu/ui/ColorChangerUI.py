@@ -36,7 +36,7 @@ class PaletteUI(BaseUI):
         self.color_slider = None
         self.selection_color = None
         self.shape_checkbox = None
-        self.website_link = 'http://www.anthonylynch.xyz'
+        self.website_link = 'http://www.anthonylynch.xyz/color-changer-script/'
         self.color_chart = [
             ((.627, .627, .627), "Medium Gray"), ((.467, .467, .467), "Dark Gray"), ((.000, .000, .000), "Black"),
             ((.247, .247, .247), "Dark Gray"), ((.498, .498, .498), "Light Gray"), ((0.608, 0, 0.157), "Dark Red"),
@@ -123,7 +123,7 @@ class PaletteUI(BaseUI):
     def about_dialog(self):
         cmds.confirmDialog(title='About Color Changer',
                            message="1) Select any controls you wish to change. \n" +
-                                   "2) Select desired color from palette or slider\n" +
+                                   "2) Select desired color from palette or slider\n" + "\n" +
                                    "Developed by : Anthony Lynch\n" +
                                    "www.anthonylynch.xyz\n",
                            ma='center', button="Close", parent=self.window)

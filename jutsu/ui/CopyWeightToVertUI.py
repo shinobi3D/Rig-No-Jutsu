@@ -12,7 +12,7 @@ class MayaGUI(QMainWindow):
     def __init__(self):
         super(MayaGUI, self).__init__()
 
-        self.setWindowTitle("Copy Weights: To Verts")
+        self.setWindowTitle("Copy Weights To Vert Selection")
         self.setFixedSize(400, 400)
         self.setWindowFlags(Qt.WindowStaysOnTopHint)  # Set window flag to stay on top
 
@@ -86,7 +86,7 @@ class MayaGUI(QMainWindow):
         # self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)
 
         # Help menu
-        self.create_help_menu()
+        self.create_main_menu()
 
         # Load Saved selections
         self.load_saved_data()
@@ -210,12 +210,14 @@ class MayaGUI(QMainWindow):
         print("Selection contains vertices.")
         return True
 
-    def create_help_menu(self):
-        help_menu = self.menuBar().addMenu("Help")
+    def create_main_menu(self):
+        action_menu = self.menuBar().addMenu("Action")
 
         clear_action = QAction("Clear All", self)
         clear_action.triggered.connect(self.clear_all)
-        help_menu.addAction(clear_action)
+        action_menu.addAction(clear_action)
+
+        help_menu = self.menuBar().addMenu("Help")
 
         about_action = QAction("About", self)
         about_action.triggered.connect(self.show_dialog_clicked)
@@ -227,11 +229,11 @@ class MayaGUI(QMainWindow):
 
     def open_about_page(self):
         # Replace the URL with the actual URL of your About page
-        QDesktopServices.openUrl(QUrl("https://anthonylynch.xyz/test-site"))
+        QDesktopServices.openUrl(QUrl("https://anthonylynch.xyz/copy-vert-weight-script"))
 
     def open_help_page(self):
         # Replace the URL with the actual URL of your Help page
-        QDesktopServices.openUrl(QUrl("https://anthonylynch.xyz/test-site"))
+        QDesktopServices.openUrl(QUrl("https://anthonylynch.xyz/copy-vert-weight-script"))
     def save_vert_list_data(self):
         # Save data to optionVars
         target_items = [self.list_widget2.item(i).text() for i in range(self.list_widget2.count())]
@@ -264,9 +266,10 @@ class MayaGUI(QMainWindow):
         # self.populate_cluster_list(source_items_json)
     def show_about_dialog(self):
         message_box = QMessageBox()
-        message_box.setWindowTitle("Confirmation")
-        message_box.setText("anthonylynch.xyz\nDate:Jan2024")
+        message_box.setWindowTitle("About")
+        message_box.setText("<center>Created by: Anthony L.<br>Website: anthonylynch.xyz<br>Date: Jan.2024")
         message_box.setStandardButtons(QMessageBox.Close)
+        message_box.setWindowFlags(Qt.WindowStaysOnTopHint)
         response = message_box.exec_()
     def show_dialog_clicked(self):
         cmds.evalDeferred(self.show_about_dialog())
