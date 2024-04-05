@@ -18,4 +18,8 @@ Copy Vert Weight
 from jutsu.ui import CopyWeightToVertUI
 CopyWeightToVertUI.show_gui()
 ```
-
+Limit No Jutsu
+```python
+from jutsu.ui import LimitUI
+LimitUI.LimitUI().run()
+```
